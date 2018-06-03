@@ -1,0 +1,8 @@
+.strings-setup {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column; }
+  .strings-setup .strings-setup-cell {
+    padding: 4px 10px 0 0;
+    flex: 1 1 0;
+    text-align: right; }

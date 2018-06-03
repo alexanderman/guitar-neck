@@ -1,0 +1,10 @@
+.cell {
+  position: relative;
+  width: 100%; }
+  .cell .fret-line {
+    background-color: #FFFFFF;
+    position: absolute;
+    width: 7px;
+    height: 100%;
+    right: 0;
+    transform: translateX(50%); }

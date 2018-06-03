@@ -1,0 +1,20 @@
+.string {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  flex: 1 1 0;
+
+  .string-line {
+    position: absolute;
+    width: 101%;
+    height: 1px;
+    background-color: #777777;
+    top: 50%;
+    transform: translateY(50%);
+    left:50%;
+    transform: translateX(-50%);
+  }
+}

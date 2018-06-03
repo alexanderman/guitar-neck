@@ -1,0 +1,9 @@
+.fret-indexes {
+  display: flex;
+  flex-direction: row;
+
+  .fret-indexes-cell {
+    position: relative;
+    width: 100%;      
+  }
+}
