@@ -14,7 +14,10 @@ const FretBoard = props => {
     
     <div className="fret-board">
       {props.strings.map((string, idx) => 
-        <String string={string} key={idx} />
+        <String dispatchCellOver={props.dispatchCellOver} 
+                dispatchCellOut={props.dispatchCellOut} 
+                string={string} stringIdx={idx} 
+                markup={props.markup[idx]} key={idx} />
       )}
       <FretIndexes numberOfFrets={props.numberOfFrets} />
     </div>
@@ -23,11 +26,13 @@ const FretBoard = props => {
 };
 
 const mapStateToProps = state => ({
-  ...state.strings
+  ...state.strings,
+  __debugState: state
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  dispatchCellOver: (cell) => dispatch({ type: 'cell-over', payload: cell }),
+  dispatchCellOut: (cell) => dispatch({ type: 'cell-out', payload: cell })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(FretBoard);

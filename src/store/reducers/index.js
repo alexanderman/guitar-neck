@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import mainReducer from './main';
 import stringsReducer from './strings';
+import uiReducer from './ui';
 
 export default combineReducers({
-  main: mainReducer,
-  strings: stringsReducer
+  strings: stringsReducer,
+  ui: uiReducer
 });
 
 

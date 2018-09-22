@@ -17,7 +17,7 @@ function createMinorScale(strings = [], scale = { noteIdx: 0 }, stringsSetup = S
   const scaleNotes = createMinorScaleNotes(scale.noteIdx);
   const markup = createMarkup(strings, scaleNotes, stringsSetup);
 
-  console.log('minor scale', markup);
+  // console.log('minor scale', markup);
   return markup;
 }
 

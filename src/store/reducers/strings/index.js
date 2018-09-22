@@ -27,7 +27,7 @@ export default function stringsReducer(state = initialState, action) {
       return { 
         ...state,
         markup: createMajorScale(state.strings, action.scale, state.stringsSetup),
-        scale: action.scale
+        scale: action.type /* unused */
       };
     }
 
@@ -35,12 +35,15 @@ export default function stringsReducer(state = initialState, action) {
       return { 
         ...state,
         markup: createMinorScale(state.strings, action.scale, state.stringsSetup),
-        scale: action.scale
+        scale: action.type
       };
     }
 
     default: {
-      return state;
+      return { 
+        ...state,
+        markup: createMajorScale(state.strings, action.scale, state.stringsSetup)
+      };
     }
   }
 
