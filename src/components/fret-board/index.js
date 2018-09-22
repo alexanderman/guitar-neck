@@ -6,29 +6,35 @@ import StringsSetup from './strings-setup/strings-setup';
 import FretIndexes from './fret-indexes/fret-indexes';
 
 
-const FretBoard = props => {
-  const getNote = noteIdx => props.NOTES[props.stringsSetup[noteIdx]].abc;
-
+const FretBoard = ({ 
+  PRESETS, 
+  markup, 
+  dispatchCellOver, 
+  dispatchCellOut }) => {
+  
   return (<div className="fret-board-cont">
-    <StringsSetup stringsSetup={props.stringsSetup} notes={props.NOTES} />
+    <StringsSetup stringsSetup={PRESETS.STRINGS_SETUP} notes={PRESETS.NOTES} />
     
     <div className="fret-board">
-      {props.strings.map((string, idx) => 
-        <String dispatchCellOver={props.dispatchCellOver} 
-                dispatchCellOut={props.dispatchCellOut} 
+      {PRESETS.STRINGS.map((string, idx) => 
+        <String dispatchCellOver={dispatchCellOver} 
+                dispatchCellOut={dispatchCellOut} 
                 string={string} stringIdx={idx} 
-                markup={props.markup[idx]} key={idx} />
+                markup={markup[idx]} key={idx} />
       )}
-      <FretIndexes numberOfFrets={props.numberOfFrets} />
+      <FretIndexes numberOfFrets={PRESETS.NUMBER_OF_FRETS} />
     </div>
 
   </div>);
 };
 
-const mapStateToProps = state => ({
-  ...state.strings,
-  __debugState: state
-});
+const mapStateToProps = state => {
+  
+  return ({
+    ...state.strings,
+    __state: state
+  });  
+}
 
 const mapDispatchToProps = dispatch => ({
   dispatchCellOver: (cell) => dispatch({ type: 'cell-over', payload: cell }),

@@ -7,7 +7,9 @@ const StringsSetup = props => {
   return (
     <div className="strings-setup">
       {props.stringsSetup.map((stringNote, idx) => 
-          <div className="strings-setup-cell" key={idx}>{getNote(stringNote)}</div>
+          <div className="strings-setup-cell" key={idx}>
+            <span>{getNote(stringNote)}</span>
+          </div>
       )}
       <div className="strings-setup-cell"></div>
     </div>    

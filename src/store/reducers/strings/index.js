@@ -3,17 +3,14 @@ import { createMajorScale } from './markup/majorScale';
 import { createMinorScale } from './markup/minorScale';
 
 const initialState = {
-  strings: createStrings(STRINGS_SETUP, NUMBER_OF_FRETS),
-  stringsSetup: STRINGS_SETUP,
-  numberOfFrets: NUMBER_OF_FRETS,
-  NOTES,
-  markup: [],
-  chord: {
-
+  PRESETS: {
+    STRINGS: createStrings(STRINGS_SETUP, NUMBER_OF_FRETS),
+    STRINGS_SETUP,
+    NUMBER_OF_FRETS,
+    NOTES
   },
-  scale: {
-    noteIdx: 0,
-  }
+  markup: [],
+  chord: {}
 };
 
 // debug code
@@ -26,23 +23,21 @@ export default function stringsReducer(state = initialState, action) {
     case 'major-scale': {
       return { 
         ...state,
-        markup: createMajorScale(state.strings, action.scale, state.stringsSetup),
-        scale: action.type /* unused */
+        markup: createMajorScale(state.PRESETS.STRINGS, action.scale, state.PRESETS.stringsSetup)
       };
     }
 
     case 'minor-scale': {
       return { 
         ...state,
-        markup: createMinorScale(state.strings, action.scale, state.stringsSetup),
-        scale: action.type
+        markup: createMinorScale(state.PRESETS.STRINGS, action.scale, state.PRESETS.stringsSetup)
       };
     }
 
     default: {
       return { 
         ...state,
-        markup: createMajorScale(state.strings, action.scale, state.stringsSetup)
+        markup: createMajorScale(state.PRESETS.STRINGS, action.scale, state.PRESETS.stringsSetup)
       };
     }
   }

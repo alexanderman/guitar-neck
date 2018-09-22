@@ -1,7 +1,7 @@
 .cell {
   position: relative;
   width: 100%;
-  background-color: #DDDDDD;
+  background-color: rgba($color: #DDDDDD, $alpha: 1);
 
   .fret-line {
     background-color: #FFFFFF;
@@ -10,5 +10,9 @@
     width: 3px; height: 100%;
     right: 0;
     transform: translateX(50%)
+  }
+
+  &:hover {
+    background-color: rgba($color: #DDDDDD, $alpha: 0.5);
   }
 }
