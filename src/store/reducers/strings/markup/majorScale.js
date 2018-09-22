@@ -22,7 +22,7 @@ function createMajorScale(strings = [], scale = { noteIdx: 0 }, stringsSetup = S
   const scaleNotes = createMajorScaleNotes(scale.noteIdx);
   const markup = createMarkup(strings, scaleNotes, stringsSetup);
 
-  console.log('major scale', markup);
+  // console.log('major scale', markup);
   return markup;
 }
 

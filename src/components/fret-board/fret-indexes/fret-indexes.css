@@ -4,4 +4,5 @@
   flex-direction: row; }
   .fret-indexes .fret-indexes-cell {
     position: relative;
-    width: 100%; }
+    width: 100%;
+    padding-top: 5px; }
