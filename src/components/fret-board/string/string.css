@@ -5,9 +5,10 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  flex: 1 1 0; }
+  flex: 1 0; }
   .string .string-line {
     position: absolute;
+    z-index: 2;
     width: 101%;
     height: 1px;
     background-color: #777777;

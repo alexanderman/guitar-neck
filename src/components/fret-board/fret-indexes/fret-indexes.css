@@ -1,5 +1,6 @@
 .fret-indexes {
   display: flex;
+  flex: 1 0;
   flex-direction: row; }
   .fret-indexes .fret-indexes-cell {
     position: relative;
