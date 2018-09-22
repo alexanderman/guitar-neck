@@ -1,4 +1,4 @@
-import { STRINGS_SETUP, getNoteIndex } from '../strings';
+import { STRINGS_SETUP, getNoteIndex } from './strings';
 import { createMarkup } from './utils';
 
 /** minor scale interavls */

@@ -1,4 +1,4 @@
-import { forEachGuitarNote, STRINGS_SETUP } from '../strings';
+import { forEachGuitarNote, STRINGS_SETUP } from './strings';
 
 function createMarkup(strings = [], markupNotes = {}, stringsSetup = STRINGS_SETUP) {
   const markup = [];

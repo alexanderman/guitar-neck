@@ -1,6 +1,6 @@
-import { createStrings, NUMBER_OF_FRETS, STRINGS_SETUP, NOTES } from './strings';
-import { createMajorScale } from './markup/majorScale';
-import { createMinorScale } from './markup/minorScale';
+import { createStrings, NUMBER_OF_FRETS, STRINGS_SETUP, NOTES } from '../initial-states/strings';
+import { createMajorScale } from '../initial-states/majorScale';
+import { createMinorScale } from '../initial-states/minorScale';
 
 const initialState = {
   PRESETS: {
