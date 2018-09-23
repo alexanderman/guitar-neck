@@ -13,9 +13,6 @@ const initialState = {
   chord: {}
 };
 
-// debug code
-createMajorScale(initialState.strings, { noteIdx: 0 }, STRINGS_SETUP);
-createMinorScale(initialState.strings, { noteIdx: 0 }, STRINGS_SETUP);
 
 export default function stringsReducer(state = initialState, action) {
 
