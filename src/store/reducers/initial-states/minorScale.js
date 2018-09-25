@@ -1,4 +1,4 @@
-import { STRINGS_SETUP, getNoteIndex } from './strings';
+import { STRINGS_SETUP, getNoteIndex, getNote } from './strings';
 import { createMarkup } from './utils';
 
 /** minor scale interavls */
@@ -8,7 +8,13 @@ function createMinorScaleNotes(startNoteIdx) {
   let currNoteIdx = startNoteIdx;
   return SCALE_INTERVALS.reduce((res, step) => {
     currNoteIdx = getNoteIndex(currNoteIdx, step);
-    res[currNoteIdx] = {/* additional markup here */};
+    res[currNoteIdx] = {
+      style: {
+        opacity: 0.4
+      },
+      note: getNote(currNoteIdx)
+      /* additional markup here */
+    };
     return res;
   }, {});
 }

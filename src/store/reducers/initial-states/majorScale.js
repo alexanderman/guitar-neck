@@ -1,4 +1,4 @@
-import { STRINGS_SETUP, getNoteIndex } from './strings';
+import { STRINGS_SETUP, getNoteIndex, getNote } from './strings';
 import { createMarkup } from './utils';
 
 /** major scale interavls */
@@ -9,9 +9,10 @@ function createMajorScaleNotes(startNoteIdx) {
   return SCALE_INTERVALS.reduce((res, step) => {
     currNoteIdx = getNoteIndex(currNoteIdx, step);
     res[currNoteIdx] = {
-      // style: {
-      //   opacity: 0.5
-      // }
+      style: {
+        opacity: 0.4
+      },
+      note: getNote(currNoteIdx)
       /* additional markup here */
     };
     return res;
