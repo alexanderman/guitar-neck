@@ -1,7 +1,7 @@
 import { createStrings, NUMBER_OF_FRETS, STRINGS_SETUP, NOTES } from '../initial-states/strings';
 import { createMajorScale } from '../initial-states/majorScale';
 import { createMinorScale } from '../initial-states/minorScale';
-import { uplightFretMarkup, downlightFretMarkup } from '../../../services/cellFunctions';
+import { applyHoverEffect } from '../../../services/cellFunctions';
 
 const PRESETS = {
   STRINGS: createStrings(STRINGS_SETUP, NUMBER_OF_FRETS),
@@ -36,20 +36,19 @@ export default function (state = initialState, action) {
       }
     }
 
-    /** saving prev state.markup.strings to toggle back the highligh effect */
-    case 'cell-over': 
-    let newState = {
+    case 'cell-over': return {
       ...state,
       markup: { 
-        __strings: [...(state.markup.__strings || state.markup.strings)], 
-        strings: [...uplightFretMarkup((state.markup.__strings || state.markup.strings), action.payload)] 
+        ...state.markup.string,
+        strings: [...applyHoverEffect(state.markup.strings, action.payload, true)]
       }
     }
-    return newState;
 
     case 'cell-out': return {
       ...state, 
-      markup: { ...state.markup, strings:[...state.markup.__strings] }
+      markup: { 
+        ...state.markup, 
+        strings:[...applyHoverEffect(state.markup.strings, action.payload, false)] }
     }
 
 
