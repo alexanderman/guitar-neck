@@ -12,6 +12,8 @@ const FretBoard = ({
   dispatchCellOver, 
   dispatchCellOut }) => {
   
+  let { strings: mrpStrings } = markup;
+
   return (<div className="fret-board-cont">
     <StringsSetup stringsSetup={PRESETS.STRINGS_SETUP} notes={PRESETS.NOTES} />
     
@@ -20,7 +22,7 @@ const FretBoard = ({
         <String dispatchCellOver={dispatchCellOver} 
                 dispatchCellOut={dispatchCellOut} 
                 string={string} stringIdx={idx} 
-                markup={markup[idx]} key={idx} />
+                markup={mrpStrings[idx]} key={idx} />
       )}
       <FretIndexes numberOfFrets={PRESETS.NUMBER_OF_FRETS} />
     </div>
@@ -31,8 +33,7 @@ const FretBoard = ({
 const mapStateToProps = state => {
   
   return ({
-    ...state.strings,
-    __state: state
+    ...state.strings
   });  
 }
 

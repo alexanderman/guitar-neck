@@ -4,7 +4,9 @@ import './markup-cell.css';
 
 const Markup = ({ markup }) => {
   return (
-    <div className="markup-cell" style={markup.style}>
+    <div className="markup-cell">
+      <div className="markup-bg" style={{...markup.style, ...markup.style_hover}}></div>
+      <span className="noteName">{markup.note.abc}</span>
     </div>
   );  
 }

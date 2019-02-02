@@ -4,7 +4,7 @@ function createMarkup(strings = [], markupNotes = {}, stringsSetup = STRINGS_SET
   const markup = [];
   forEachGuitarNote(strings, (stringIdx, fretIdx, noteIdx, note) => {
     const string = markup[stringIdx] = markup[stringIdx] || [];
-    string[fretIdx] = markupNotes[noteIdx] || undefined;
+    string[fretIdx] = markupNotes[noteIdx];
   });
   return markup;
 }

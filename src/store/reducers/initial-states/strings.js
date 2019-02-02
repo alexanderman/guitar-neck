@@ -4,18 +4,18 @@
  */
 
 const NOTES = [
-  { doremi: 'La',   abc: 'A'  }, /** 0 */
-  { doremi: 'La#',  abc: 'A#' }, /** 1 */
-  { doremi: 'Ci',   abc: 'B'  }, /** 2 */
-  { doremi: 'Do',   abc: 'C'  }, /** 3 */
-  { doremi: 'Do#',  abc: 'C#' }, /** 4 */
-  { doremi: 'Re',   abc: 'D'  }, /** 5 */
-  { doremi: 'Re#',  abc: 'D#' }, /** 6 */
-  { doremi: 'Mi',   abc: 'E'  }, /** 7 */
-  { doremi: 'Fa',   abc: 'F'  }, /** 8 */
-  { doremi: 'Fa#',  abc: 'F#' }, /** 9 */
-  { doremi: 'Sol',  abc: 'G'  }, /** 10 */
-  { doremi: 'Sol#', abc: 'G#' }, /** 11 */
+  { idx: 0, doremi: 'La',   abc: 'A'  }, /** 0 */
+  { idx: 1, doremi: 'La#',  abc: 'A#' }, /** 1 */
+  { idx: 2, doremi: 'Ci',   abc: 'B'  }, /** 2 */
+  { idx: 3, doremi: 'Do',   abc: 'C'  }, /** 3 */
+  { idx: 4, doremi: 'Do#',  abc: 'C#' }, /** 4 */
+  { idx: 5, doremi: 'Re',   abc: 'D'  }, /** 5 */
+  { idx: 6, doremi: 'Re#',  abc: 'D#' }, /** 6 */
+  { idx: 7, doremi: 'Mi',   abc: 'E'  }, /** 7 */
+  { idx: 8, doremi: 'Fa',   abc: 'F'  }, /** 8 */
+  { idx: 9, doremi: 'Fa#',  abc: 'F#' }, /** 9 */
+  { idx: 10, doremi: 'Sol',  abc: 'G'  }, /** 10 */
+  { idx: 11, doremi: 'Sol#', abc: 'G#' }, /** 11 */
 ]
 
 const NUMBER_OF_FRETS = 13;
